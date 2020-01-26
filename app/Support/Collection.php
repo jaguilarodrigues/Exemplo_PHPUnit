@@ -2,13 +2,21 @@
 
 namespace App\Support;
 
-class Collection
+use IteratorAggregate;
+use ArrayIterator;
+
+class Collection implements \IteratorAggregate
 {
 	protected $items = [];
 
 	public function __construct(array $items = [])
 	{
 		$this->items = $items;
+	}
+
+	public function getIterator()
+	{
+		return new ArrayIterator($this->items);
 	}
 
 	public function get()
