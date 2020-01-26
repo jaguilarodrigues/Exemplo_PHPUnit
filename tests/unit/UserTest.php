@@ -2,6 +2,7 @@
 
 class UserTest extends PHPUnit\Framework\TestCase
 {
+	/** @test  */
 	public function testThatWeCanGetTheFirstName()
 	{
 		$user = new \App\Models\User;
